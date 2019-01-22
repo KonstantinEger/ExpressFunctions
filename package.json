@@ -1,0 +1,14 @@
+{
+  "name": "express-functions",
+  "version": "0.1.0",
+  "description": "A express library for making it easy to connect backend and frontend of a modern web application",
+  "main": "src/server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konstantin Eger",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.16.4"
+  }
+}
