@@ -10,5 +10,8 @@
   "license": "MIT",
   "devDependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "keywords": [
+    "express", "expressjs", "express-functions"
+  ]
 }
