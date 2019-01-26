@@ -1,6 +1,5 @@
-const express = require('express');
-
-function router(fns) {
+function Router(options) {
+  const express = require('express');
   const router = express.Router();
   router.use(express.json());
   
@@ -8,40 +7,17 @@ function router(fns) {
     res.send({ msg: 'connected' });
   });
 
-  router.post('/_exprfn/fn', (req, res) => {
+  if (options.functions) {
+    const fns = options.functions;
+    router.use('/_exprfn', require('./functions')(fns));
+  }
 
-    const fnName = req.body.fnName;
-    const params = req.body.params;
-
-    if (!fns[fnName]) {
-      res.json({
-        status: 'ERR',
-        errCode: '01',
-        msg: `Function "${fnName}" does not exist`
-      });
-      return;
-    }
-
-    let result;
-    try {
-      result = fns[fnName](params);
-    } catch (error) {
-      res.json({
-        status: 'ERR',
-        errCode: '02',
-        msg: 'Error while executing function',
-        errMsg: error.toString()
-      });
-      return;
-    }
-
-    res.json({
-      status: 'DONE',
-      result
-    });
-  });
+  if (options.events) {
+    const eventfns = options.events;
+    router.use('/_exprfn', require('./events')(eventfns));
+  }
 
   return router;
 }
 
-module.exports = router;
+module.exports = Router;

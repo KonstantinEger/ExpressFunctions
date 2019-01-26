@@ -43,9 +43,9 @@ module.exports = {
 // ... thats it!
 ````
 ### Frontend
-For the frontend we need to add the expr-fn.js file. You can find it in the source code
-at `src/public/expr-fn.js`. Just download the file or copy the bit of code. In the future this should also be available via a CDN.<br><br>
-For this project I saved it in `public/scripts/expr-fn.js`.
+For the frontend we need to add the frontend file. You can find it at the releases
+tab on [github.com](https://github.com/KonstantinEger/ExpressFunctions/releases/latest).
+Just download the file or use a CDN (used in the example).
 
 > Now the index.html file
 ````html
@@ -60,8 +60,8 @@ For this project I saved it in `public/scripts/expr-fn.js`.
   <title>ExpressFunctions</title>
 </head>
 <body>
-  <!-- Add express-functions to the page -->
-  <script src="/scripts/expr-fn.js"></script>
+  <!-- Add express-functions script -->
+  <script src="https://unpkg.com/express-functions/src/public/expr-fn.js"></script>
 
   <script>
     // put the code in an async function
