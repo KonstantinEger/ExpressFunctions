@@ -1,5 +1,8 @@
-function functions(fns) {
-  const router = require('express').Router();
+import { Router } from 'express';
+
+export default function functions(fns: Function[]) {
+
+  const router = Router();
 
   router.post('/fn', (req, res) => {
 
@@ -16,6 +19,7 @@ function functions(fns) {
     }
 
     let result;
+
     try {
       result = fns[fnName](params);
     } catch (error) {
@@ -32,9 +36,9 @@ function functions(fns) {
       status: 'DONE',
       result
     });
+
   });
 
   return router;
-}
 
-module.exports = functions;
+}

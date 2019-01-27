@@ -4,15 +4,22 @@
   "description": "An express library for making it easy to connect backend and frontend of modern web applications via functions",
   "main": "src/server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc --watch",
+    "build": "tsc"
   },
   "author": "Konstantin Eger",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4"
   },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "typescript": "^3.2.4"
+  },
   "keywords": [
-    "express", "expressjs", "express-functions"
+    "express",
+    "expressjs",
+    "express-functions"
   ],
   "repository": {
     "type": "git",
