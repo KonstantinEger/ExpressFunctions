@@ -1,8 +1,8 @@
 {
   "name": "express-functions",
-  "version": "1.0.0",
-  "description": "An express library for making it easy to connect backend and frontend of modern web applications via functions",
-  "main": "src/server/index.js",
+  "version": "2.0.0",
+  "description": "An express library for making it easy to connect backend and frontend of modern web applications via functions and events",
+  "main": "dist/server/index.js",
   "scripts": {
     "start": "tsc --watch",
     "build": "tsc"
